@@ -15,7 +15,7 @@ By default, git uses `origin` as name for remote repository. There could be many
 	fetch = +refs/heads/feature_*:refs/remotes/origin/feature_*
 	```
 
-2. Delete remote branches
+2. Delete tracking branches
 	* Delete them one-by-one
 	```batch
 	git branch -r -d origin/{branch1} origin/{branch2} origin/{branch3}
@@ -25,4 +25,4 @@ By default, git uses `origin` as name for remote repository. There could be many
 	git branch -r -d $(git for-each-ref --format='%(refname:short)' refs/remotes/origin/{wildcard})
 	```
 	
-#### NOTE: do not use GUI or IDE utilities to remove remote tracking branch, because it may actually delete them.
+#### NOTE: do not use GUI or IDE utilities to remove tracking branch, because it may actually delete them.
