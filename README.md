@@ -1,9 +1,9 @@
 # Hide git remote branches
-By default, git uses `origin` as name for remote repository. There could be many remote repositories with different names. Before you go, check which repos are used with command  `git remote -v` and replace `{origin}` with preferred name.
+By default, git uses `origin` as name for remote repository. There could be many remote repositories with different names. Before you go, check which repos are used with command  `git remote -v` and replace `origin` with preferred name.
 	
 1. Edit git config
 	* Open conig file `.git/config`
-	* Locate `[remote "{origin}"]` section with fetch config. It should look something like this:
+	* Locate `[remote "origin"]` section with fetch config. It should look something like this:
 	```
 	fetch = +refs/heads/*:refs/remotes/origin/*
 	```
@@ -18,11 +18,11 @@ By default, git uses `origin` as name for remote repository. There could be many
 2. Delete remote branches
 	* Delete them one-by-one
 	```batch
-	git branch -r -d {origin}/{branch1} {origin}/{branch2} {origin}/{branch3}
+	git branch -r -d origin/{branch1} origin/{branch2} origin/{branch3}
 	```
 	OR use wildcards (i've googled only bash oneliner and didn't test it, use at your own risk!)
 	```bash
-	git branch -r -d $(git for-each-ref --format='%(refname:short)' refs/remotes/{origin}/{wildcard})
+	git branch -r -d $(git for-each-ref --format='%(refname:short)' refs/remotes/origin/{wildcard})
 	```
 	
 #### NOTE: do not use GUI or IDE utilities to remove remote tracking branch, because it may actually delete them.
