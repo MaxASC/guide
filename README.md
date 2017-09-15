@@ -25,4 +25,4 @@ By default, git uses `origin` as name for remote repository. There could be many
 	git branch -r -d $(git for-each-ref --format='%(refname:short)' refs/remotes/origin/{wildcard})
 	```
 	
-#### NOTE: do not use GUI or IDE utilities to remove tracking branch, because it may actually delete them.
+#### NOTE: do not use GUI or IDE utilities to remove tracking branch, because it may actually delete remote branch.
